@@ -2,12 +2,12 @@ from flask import Flask, send_file, jsonify, request
 import os
 
 app = Flask(__name__)
-MUSIC_DIR = "../music"
+MUSIC_DIR = "/home/k0/Documents/music-server/music"
 
 def get_file():
     files = []
     for file in os.listdir(MUSIC_DIR):
-        if file.endswith("mp3", "wav", "flac"):
+        if file.endswith(("mp3", "wav", "flac")):
             files.append(file)
     return files
 
@@ -21,4 +21,4 @@ def play_music(filename):
     return send_file(f"{MUSIC_DIR}/{filename}")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="127.0.0.1", port=5000)

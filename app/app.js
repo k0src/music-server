@@ -1,5 +1,5 @@
 async function get_music_list() {
-    const response = await fetch('http://localhost:5000/music');
+    const response = await fetch('http://127.0.0.1:5000/music');
     const playlist = await response.json();
     const playlist_div = document.getElementById('playlist');
     playlist.forEach(song => {
@@ -12,7 +12,7 @@ async function get_music_list() {
 
 function play_music(song) {
     const audio = document.getElementById('audio');
-    audio.src = `http://localhost:5000/play/${filename}`;
+    audio.src = `http://127.0.0.1:5000/play/${filename}`;
     audio.play();
 }
 
