@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Server</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Music Server</h1>
-    <audio id="audio" controls>
-    </audio>
+    <div class="audio-controls">
+        <button id="back-btn">⏮️</button>
+        <audio id="audio" controls>
+        </audio>
+        <button id="forward-btn">⏭️</button>
+    </div>
     <div id="playlist"></div>
 
     <script src="app.js"></script>
