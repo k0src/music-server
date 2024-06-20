@@ -11,6 +11,10 @@
     cursor: pointer;
 }
 
+#shuffle-btn.active {
+    opacity: 0.7;
+}
+
 #playlist {
     height: 200px;
     overflow-y: scroll;
