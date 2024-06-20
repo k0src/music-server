@@ -25,6 +25,13 @@ function play_music(song) {
     const audio = document.getElementById('audio');
     audio.src = `http://127.0.0.1:5000/play/${song}`;
     audio.play();
+
+    audio.onended = function() {
+        if (current_index + 1 < playlist.length) {
+            current_index++;
+            play_music(playlist[current_index]);
+        }
+    };
 }
 
 function play_next() {
